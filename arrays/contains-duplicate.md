@@ -1,5 +1,21 @@
 # Contains Duplicate
 
+## Navigate
+
+Jump to a solution or section (click to scroll):
+
+| | |
+|--|--|
+| **Overview** | [Description](#description) · [Prerequisites](#prerequisites) · [Common Pitfalls](#common-pitfalls) |
+| **1. Brute Force** | [Section](#1-brute-force) — [Java](#1-brute-force-java) · [C++](#1-brute-force-cpp) · [Python](#1-brute-force-python) |
+| **2. Sorting** | [Section](#2-sorting) — [Java](#2-sorting-java) · [C++](#2-sorting-cpp) · [Python](#2-sorting-python) |
+| **3. Hash Set** | [Section](#3-hash-set) — [Java](#3-hash-set-java) · [C++](#3-hash-set-cpp) · [Python](#3-hash-set-python) |
+| **4. Hash Set Length** | [Section](#4-hash-set-length) — [Java](#4-hash-set-length-java) · [C++](#4-hash-set-length-cpp) · [Python](#4-hash-set-length-python) |
+
+**Tip:** Each code block is inside a collapsible panel—click the language row to show or hide the source.
+
+---
+
 ## Description
 
 Given an integer array `nums`, return `true` if any value appears **at least twice**, and `false` if every element is distinct.
@@ -33,7 +49,9 @@ If any two different indices hold the same value, there is a duplicate. We can c
 |---|------|--------|
 | **Brute force** | **O(n²)** | **O(1)** |
 
-### Java
+<a id="1-brute-force-java"></a>
+<details>
+<summary><strong>Java</strong> — TC: O(n²), SC: O(1) · <em>click to show / hide code</em></summary>
 
 ```java
 class Solution {
@@ -48,9 +66,11 @@ class Solution {
 }
 ```
 
-**TC:** O(n²), **SC:** O(1)
+</details>
 
-### C++
+<a id="1-brute-force-cpp"></a>
+<details>
+<summary><strong>C++</strong> — TC: O(n²), SC: O(1) · <em>click to show / hide code</em></summary>
 
 ```cpp
 #include <vector>
@@ -69,9 +89,11 @@ public:
 };
 ```
 
-**TC:** O(n²), **SC:** O(1)
+</details>
 
-### Python
+<a id="1-brute-force-python"></a>
+<details>
+<summary><strong>Python</strong> — TC: O(n²), SC: O(1) · <em>click to show / hide code</em></summary>
 
 ```python
 class Solution:
@@ -84,7 +106,7 @@ class Solution:
         return False
 ```
 
-**TC:** O(n²), **SC:** O(1)
+</details>
 
 ---
 
@@ -108,7 +130,9 @@ After sorting, equal values become **adjacent**. A single linear scan can detect
 
 \* In Java/C++, typical sort may use `O(log n)` stack or internal buffer depending on implementation; still regarded as **O(1)** auxiliary relative to output for interviews unless specified.
 
-### Java
+<a id="2-sorting-java"></a>
+<details>
+<summary><strong>Java</strong> — TC: O(n log n), SC: O(1) aux · <em>click to show / hide code</em></summary>
 
 ```java
 import java.util.Arrays;
@@ -124,9 +148,11 @@ class Solution {
 }
 ```
 
-**TC:** O(n log n), **SC:** O(1) auxiliary (in-place sort)
+</details>
 
-### C++
+<a id="2-sorting-cpp"></a>
+<details>
+<summary><strong>C++</strong> — TC: O(n log n), SC: O(1) aux · <em>click to show / hide code</em></summary>
 
 ```cpp
 #include <vector>
@@ -145,9 +171,11 @@ public:
 };
 ```
 
-**TC:** O(n log n), **SC:** O(1) auxiliary (in-place sort)
+</details>
 
-### Python
+<a id="2-sorting-python"></a>
+<details>
+<summary><strong>Python</strong> — TC: O(n log n), SC: O(1)* · <em>click to show / hide code</em></summary>
 
 ```python
 class Solution:
@@ -159,7 +187,9 @@ class Solution:
         return False
 ```
 
-**TC:** O(n log n), **SC:** O(1) if sort is in-place (Timsort may use temporary space; often O(n) worst-case internally).
+*Timsort may use O(n) internal space in worst case.*
+
+</details>
 
 ---
 
@@ -185,7 +215,9 @@ A **set** stores each value at most once. While scanning the array, if we try to
 
 Worst-case hash behavior can degrade; still standard for this problem.
 
-### Java
+<a id="3-hash-set-java"></a>
+<details>
+<summary><strong>Java</strong> — TC: O(n) avg, SC: O(n) · <em>click to show / hide code</em></summary>
 
 ```java
 import java.util.HashSet;
@@ -202,9 +234,11 @@ class Solution {
 }
 ```
 
-**TC:** O(n) average, **SC:** O(n)
+</details>
 
-### C++
+<a id="3-hash-set-cpp"></a>
+<details>
+<summary><strong>C++</strong> — TC: O(n) avg, SC: O(n) · <em>click to show / hide code</em></summary>
 
 ```cpp
 #include <vector>
@@ -224,9 +258,11 @@ public:
 };
 ```
 
-**TC:** O(n) average, **SC:** O(n)
+</details>
 
-### Python
+<a id="3-hash-set-python"></a>
+<details>
+<summary><strong>Python</strong> — TC: O(n) avg, SC: O(n) · <em>click to show / hide code</em></summary>
 
 ```python
 class Solution:
@@ -239,7 +275,7 @@ class Solution:
         return False
 ```
 
-**TC:** O(n) average, **SC:** O(n)
+</details>
 
 ---
 
@@ -260,7 +296,9 @@ If there are **no duplicates**, the number of **distinct** values equals `n`. Pu
 |---|------|--------|
 | **Set length** | **O(n)** average | **O(n)** |
 
-### Java
+<a id="4-hash-set-length-java"></a>
+<details>
+<summary><strong>Java</strong> — TC: O(n) avg, SC: O(n) · <em>click to show / hide code</em></summary>
 
 ```java
 import java.util.HashSet;
@@ -275,9 +313,11 @@ class Solution {
 }
 ```
 
-**TC:** O(n) average, **SC:** O(n)
+</details>
 
-### C++
+<a id="4-hash-set-length-cpp"></a>
+<details>
+<summary><strong>C++</strong> — TC: O(n) avg, SC: O(n) · <em>click to show / hide code</em></summary>
 
 ```cpp
 #include <vector>
@@ -293,9 +333,11 @@ public:
 };
 ```
 
-**TC:** O(n) average, **SC:** O(n)
+</details>
 
-### Python
+<a id="4-hash-set-length-python"></a>
+<details>
+<summary><strong>Python</strong> — TC: O(n) avg, SC: O(n) · <em>click to show / hide code</em></summary>
 
 ```python
 class Solution:
@@ -303,7 +345,7 @@ class Solution:
         return len(set(nums)) != len(nums)
 ```
 
-**TC:** O(n) average, **SC:** O(n)
+</details>
 
 ---
 
